@@ -1,1 +1,4 @@
-./auth.json
+auth*
+node_modules/
+config*
+*.sqlite*
