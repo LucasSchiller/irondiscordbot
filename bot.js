@@ -228,6 +228,15 @@ client.on("message", async message => {
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 
+  if(command === "roll") {
+    // Deletes '!roll' from the chat.
+    message.delete().catch(O_o=>{});
+    // Rolls a random number from 1-100.
+    const rolledNum = Math.floor(Math.random() * 101);
+    // Returns a message to the discord channel with the username and the number that was rolled.
+    message.channel.send(`🎲 ${message.author} has rolled ${rolledNum}.`);
+  }
+
   if(command === "help") {
     let contents = '';
 
@@ -243,6 +252,7 @@ client.on("message", async message => {
     contents += '`' + config.prefix + 'kick <@user> <optional reason>` - Kicks the user tagged from the guild. (Officer/GM Only)\n';
     contents += '`' + config.prefix + 'ban <@user> <optional reason>` - Bans the user tagged from the guild. (Officer/GM Only)\n';
     contents += '`' + config.prefix + 'purge <1-100>` - Deletes the last X number of posts in the channel. (Officer/GM Only)\n';
+    contents += '`' + config.prefix + 'roll` - Rolls a random number between 1-100. \n';
 
     message.channel.send(contents);
   }
