@@ -33,7 +33,7 @@ client.on('guildMemberAdd', member => {
   // Do nothing if the channel wasn't found on this server
   if (!channel) return;
   // Send the message, mentioning the member
-  channel.send(`Welcome to IronBorn ${member.user}! If you are interested in joining our guild, please type !join in the general text channel to get into contact with an officer or guildmaster.`);
+  channel.send(`Welcome to the IronBorn ${member.user}! If you are interested in joining our guild, please type !join in the general text channel to get into contact with an officer or guildmaster.`);
 });
 
 
